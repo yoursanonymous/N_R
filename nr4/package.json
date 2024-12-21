@@ -1,0 +1,33 @@
+{
+  "name": "nr1",
+  "version": "1.0.0",
+  "description": "this is react codes",
+  "scripts": {
+    "start": "parcel NR1.html",
+    "build": "parcel build NR1.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoursanonymous/NR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "browserslist": [
+    "last 2 version"
+  ],
+  "bugs": {
+    "url": "https://github.com/yoursanonymous/NR/issues"
+  },
+  "homepage": "https://github.com/yoursanonymous/NR#readme",
+  "main": "NR1.js",
+  "keywords": []
+}
