@@ -21,6 +21,36 @@ const Header = () => {
     </div>
   );
 };
+const RestrauntCard = (props) => {
+  const { resData } = props;
+  console.log(resData);
+  const { info } = resData;
+  console.log(info);
+  return (
+    <div
+      className="res-card"
+      style={{
+        backgroundColor: "lightgray",
+        border: "1px solid gray",
+      }}
+    >
+      <img
+        className="meghana"
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          info.cloudinaryImageId
+        }
+        alt={info.name}
+      />
+      <h3>{info.name}</h3>
+      <h4>{info.cuisines.join(", ")}</h4>
+      <h4>
+        {info.avgRating + " stars"} {info.sla.deliveryTime} minutes
+      </h4>
+    </div>
+  );
+};
+
 // const styleCard={
 //   backgroundColor:"grey",
 
@@ -1626,33 +1656,9 @@ const resObj = [
     },
   },
 ];
-const RestrauntCard = (props) => {
-  const { resData } = props;
-  return (
-    <div
-      className="res-card"
-      style={{
-        backgroundColor: "light gray",
-        border: "1px solid  gray",
-      }}
-    >
-      <img
-        className="meghana"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          resData.info.cloudinaryImageId
-        }
-      />
-      <h3>{resObj.info.name}</h3>
-      <h4>{resObj.info.cuisines.join(", ")}</h4>
-      <h4>
-        {resObj.info.avgRating + " stars"} {resObj.info.sla.deliveryTime}{" "}
-        minutes
-      </h4>
-      <h4></h4>
-    </div>
-  );
-};
+
+console.log(resObj);
+console.log(resObj[0].info.name)
 const footer = () => {
   return <div className="links"></div>;
 };
@@ -1662,29 +1668,21 @@ const Body = () => {
       <div className="search">search</div>
       <div className="res-conatiner">
         <RestrauntCard resData={resObj[0]} />
-        <RestrauntCard resName="burger foods" cuisine="burger,fast food" />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
-        <RestrauntCard />
+        <RestrauntCard resData={resObj[1]}  />
+        <RestrauntCard resData={resObj[2]} />
+        <RestrauntCard resData={resObj[3]}  />
+        <RestrauntCard resData={resObj[4]} />
+        <RestrauntCard resData={resObj[5]}  />
+        <RestrauntCard resData={resObj[6]} />
+        <RestrauntCard resData={resObj[7]}  />
+        <RestrauntCard resData={resObj[8]} />
+        <RestrauntCard resData={resObj[9]}  />
+        <RestrauntCard resData={resObj[10]} />
+        <RestrauntCard resData={resObj[11]}  />
+        <RestrauntCard resData={resObj[12]} />
+        <RestrauntCard resData={resObj[13]}  />
+        <RestrauntCard resData={resObj[14]} />
+        <RestrauntCard resData={resObj[15]}  />
       </div>
     </div>
   );
