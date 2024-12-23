@@ -32,14 +32,12 @@
     padding: 5px;
     width:200px;
     margin: 5px;
-    height: 450px;
     border: 1px solid white;
 }
 .res-card:hover{
     cursor: pointer;
     border: 1px solid black;
     width: 250px;
-    height: 500px;
     transition: ease;
     transition-duration: 500ms;
 }
@@ -57,4 +55,8 @@
 }
 .meghana{
     width: 100%;
+}
+.filter-btn{
+    margin: 10px;
+    cursor: pointer;
 }

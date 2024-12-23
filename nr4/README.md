@@ -96,3 +96,68 @@ can also destructure  const {resName,cuisine}=props
 <h3>{resName}</h3>
       <h4>{cuisine}</h4>
 conflict driven ui=> where component change after locations,discount change if the location changes
+we can now  add the live production data in form of json by collectiong it from website by inspecting in network of fetch then we would open it in the new tab of the chrome by using the json viewer in the extentesion 
+then copying the restraunt card of types of restraunt near by and then pasting it then representing it in the web by 
+const RestrauntCard = (props) => {
+  const { resData } = props;
+  console.log(resData);
+  const { info } = resData;
+  console.log(info);
+  return (
+    <div
+      className="res-card"
+      style={{
+        backgroundColor: "lightgray",
+        border: "1px solid gray",
+      }}
+    >
+      <img
+        className="meghana"
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          info.cloudinaryImageId
+        }
+        alt={info.name}
+      />
+      <h3>{info.name}</h3>
+      <h4>{info.cuisines.join(", ")}</h4>
+      <h4>
+        {info.avgRating + " stars"} {info.sla.deliveryTime} minutes
+      </h4>
+    </div>
+  );
+};
+and making the restraunt card by
+  <RestrauntCard resData={resObj[3]}  />
+?= optional chaining
+Each child in a list should have a unique "key" prop.
+it can be solved by assigning key key={restraunt.info.id}
+why we need keys
+if there we add another it will render al the restraunt card contained by a container neacsue it doesnt know which is new and which is old
+if you give them an id then it will render only the new 
+some people use key={index} but react consider as a bad practice not recommended
+2 types of export and import
+1) default export/import 
+<!--  export default Header; -->
+<!-- import RestrauntCard from "./RestrauntCard"; -->
+2)named export import
+<!-- export const LOGO_URL= "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/portal/c/logo_2022.png"
+ -->
+ <!-- import { LOGO_URL } from "../utils/constants";
+ -->
+ now develop a button of top rated restraunt (4<)
+ hook=normal js utility function
+ -usedState()-used to give superpowerfull state variable in react
+ import {useState }from "react"
+ it create the state variable
+ whenever a state variable updates react will re render my component
+ -useEffect()
+
+
+ react uses reconciliation algorithm (react fiber)
+ react virtual DOM- representation of an actual DOM=normal js object
+ diff algo=tries to find the diff b/w 2 virtual DOM.it will then actually upate the DOM o every render cycle
+ this whole thing is react fiber
+when we click then it makes a virtual dom find the difference b/w thwm then updates
+incremental rendering =ability to split rendering work imto chunks and spread
+https://github.com/acdlite/react-fiber-architecture

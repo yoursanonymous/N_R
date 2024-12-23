@@ -1,55 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo_container">
-        <img
-          className="logo"
-          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/portal/c/logo_2022.png"
-        />
-      </div>
-      <div className="nav_items">
-        <ul>
-          <li>home</li>
-          <li>about us</li>
-          <li>conatct us</li>
-          <li>learn more</li>
-          <li>cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-const RestrauntCard = (props) => {
-  const { resData } = props;
-  console.log(resData);
-  const { info } = resData;
-  console.log(info);
-  return (
-    <div
-      className="res-card"
-      style={{
-        backgroundColor: "lightgray",
-        border: "1px solid gray",
-      }}
-    >
-      <img
-        className="meghana"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          info.cloudinaryImageId
-        }
-        alt={info.name}
-      />
-      <h3>{info.name}</h3>
-      <h4>{info.cuisines.join(", ")}</h4>
-      <h4>
-        {info.avgRating + " stars"} {info.sla.deliveryTime} minutes
-      </h4>
-    </div>
-  );
-};
+import Header from "./components/Header.js";
+import Body from "./components/Body.js";
+import RestrauntCard from "./components/RestrauntCard.js";
+
+
 
 // const styleCard={
 //   backgroundColor:"grey",
@@ -1657,36 +1612,12 @@ const resObj = [
   },
 ];
 
-console.log(resObj);
-console.log(resObj[0].info.name)
+// console.log(resObj);
+// console.log(resObj[0].info.name)
 const footer = () => {
   return <div className="links"></div>;
 };
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">search</div>
-      <div className="res-conatiner">
-        <RestrauntCard resData={resObj[0]} />
-        <RestrauntCard resData={resObj[1]}  />
-        <RestrauntCard resData={resObj[2]} />
-        <RestrauntCard resData={resObj[3]}  />
-        <RestrauntCard resData={resObj[4]} />
-        <RestrauntCard resData={resObj[5]}  />
-        <RestrauntCard resData={resObj[6]} />
-        <RestrauntCard resData={resObj[7]}  />
-        <RestrauntCard resData={resObj[8]} />
-        <RestrauntCard resData={resObj[9]}  />
-        <RestrauntCard resData={resObj[10]} />
-        <RestrauntCard resData={resObj[11]}  />
-        <RestrauntCard resData={resObj[12]} />
-        <RestrauntCard resData={resObj[13]}  />
-        <RestrauntCard resData={resObj[14]} />
-        <RestrauntCard resData={resObj[15]}  />
-      </div>
-    </div>
-  );
-};
+
 const AppLayout = () => {
   return (
     <div className="app">
