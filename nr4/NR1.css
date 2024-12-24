@@ -49,14 +49,23 @@
     transition: ease;
     transition-duration: 500ms;
 } */
-.search{
-    padding: 10px;
-    border: 1px solid black;
-}
+
 .meghana{
     width: 100%;
 }
 .filter-btn{
     margin: 10px;
     cursor: pointer;
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap ;
+
+}
+.shimmer_cards{
+    width: 200px;
+    height: 400px;
+    background-color: gray;
+    border: 1px solid black;
+    margin:5px ;
 }

@@ -161,3 +161,59 @@ some people use key={index} but react consider as a bad practice not recommended
 when we click then it makes a virtual dom find the difference b/w thwm then updates
 incremental rendering =ability to split rendering work imto chunks and spread
 https://github.com/acdlite/react-fiber-architecture
+ //create a local state variable
+    const [listOfRestraunt,setListOfRestraunt]=useState(resObj);//this is array destructuring
+    //can also write it like 
+    //const arr=useState(resObj)
+    //const listOfRestarunt=arr[0];
+    //const setListOf/rstraubnt
+    //create normal js varisble
+    // let listOfRestraunt=[];
+
+monolith architecture=>big projects that used to contain api, ui, aut, database, sms, basiaclyy everything. if you want to change the colour of a buton then you have build the whole project then deploy it 
+microservice architecture=> different services combines to form a big app
+having different project for different thing =>seperation of concern foolows single resposibility principle where each every service has its own job.run on their specific ports
+2 appraches how ui apps fetch data from backend
+1) when our app loads we can make api call wait for data to come then render the ui
+2) when our app loads the data then quickly render it now we make api call then render ui the data of api
+in react we will use 2nd beacuse gives better ux
+if we fetch the siwggy api isntead of using hard coded data 
+ useEffect(()=>{
+      fetchData();
+    },[])
+    // this callback console.log fucntion wil be caled after rendering the body
+
+
+    const fetchData=async()=>{
+      const data=
+      await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.690457&lng=77.33467069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
+      const json=await data.json();
+      console.log(json);
+      setListOfRestraunt(json)
+    }
+
+    //fetch will return a pomise
+    //can resolve a promise by .then .catch or async Await
+   
+   it will give an error=>localhost/:1 Access to fetch at 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.690457&lng=77.33467069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING' from origin 'http://localhost:1234' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+cors policy =our browser block us if there is an origin mismatch
+we can bypass it by cchrome extemsion of cor
+then we can start the server again with live data by
+      const fetchData=async()=>{
+      const data=
+      await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.690457&lng=77.33467069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
+      const json=await data.json();
+      console.log(json);
+      setListOfRestraunt(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+we get the add in the json 
+ we can also do it better by optional chaining
+       setListOfRestraunt(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+we can use shemar ui when the cards are not loaded=>blank cards loaded before loading hte actual cards
+//conditional rendering=rendering on the base of condition 
+    if(listOfRestraunt.length===0){
+      return <Shimmer/>
+    }
