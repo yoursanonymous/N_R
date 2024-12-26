@@ -138,8 +138,8 @@ if you give them an id then it will render only the new
 some people use key={index} but react consider as a bad practice not recommended
 2 types of export and import
 1) default export/import 
-<!--  export default Header; -->
-<!-- import RestrauntCard from "./RestrauntCard"; -->
+ export default Header; 
+ import RestrauntCard from "./RestrauntCard";
 2)named export import
 <!-- export const LOGO_URL= "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/portal/c/logo_2022.png"
  -->
@@ -210,10 +210,67 @@ then we can start the server again with live data by
       console.log(json);
       setListOfRestraunt(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
 we get the add in the json 
- we can also do it better by optional chaining
-       setListOfRestraunt(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+we can also do it better by optional chaining
+       setListOfRestraunt(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle.restaurants)
 we can use shemar ui when the cards are not loaded=>blank cards loaded before loading hte actual cards
 //conditional rendering=rendering on the base of condition 
     if(listOfRestraunt.length===0){
       return <Shimmer/>
     }
+    can combine the conditional and normal return by==>  return listOfRestraunt.length==0?<Shimmer/>:
+    why do we need state variables
+    if we do this <button className="login" onClick={()=>{
+                btnName="logout"
+            }
+            }>{btnName}</button>
+            it wont update in the page,but it will update if we console.log it
+            there we use state variable
+            if we
+            const {btnNameReact}=useState("Login");
+             const [btnNameReact,setBtnReact]=useState("Login")
+             onClick={()=>{
+                setBtnReact("Logout")
+            }}
+             we cant directly change the value
+when we had btnName react doesn't know the whether the btnNAme got updated or not
+when the state variable chnages it will re render the whole we can check by consoling a thing 
+if it came out twice it is re rendering the whole header
+basically it invoke the header functio again but this time the value of the btnName changes
+onClick={()=>{
+              console.log(searchText)
+              filter the restraunt and update it
+               const filtered=listOfRestraunt.filter(
+                 (res)=>res.info.name="searchText"
+               )
+              this value will first be binded to state variable 
+              searchText
+            }}
+            now this will not take new value in input
+whatever in the searchText will be inside value
+it wil get updated in the search box if there is OnChange
+whenever react state variabl updates, react trigger a reconciliation cycle(re renders the component)=on ach key press it re renders
+if we make filtered of restraunt and asiign it to the actual list it wont work
+without using cors plugin=>use corsproxy.io
+https://corsproxy.io/?
+useEffect(()=>{ 
+    
+  },[])
+useEffect is called after every render of that component. dependecy array chsnges the behaviour of it's returning. if the there is no array then it (useEffect)will be called on every component array
+console.log("headderrr");
+  useEffect(()=>{
+    console.log("useEffect Called")
+  },[])
+  in this case headderrr will be called again and agin in logout and login but useEffect is called on initial render
+console.log("headderrr");
+  useEffect(()=>{
+    console.log("useEffect Called")
+  },[])
+  in this case headderrr and useEfeect called will be called again and agin in logout and login
+if we put something in dependecy array, it will only be called if the dependency changes
+console.log("headderrr");
+  useEffect(()=>{
+    console.log("useEffect Called")
+  },[btnNameReact])=>everytime when btnNameReact changes it wiil be called 
+always call useState in fucntional component and on the top so there wont be any inconsisitecny in ur code since js is threaded
+dont call useState in if-else and for loop
+eg:- this one=>  const [btnNameReact, setBtnReact] = useState("Login");
