@@ -274,3 +274,30 @@ console.log("headderrr");
 always call useState in fucntional component and on the top so there wont be any inconsisitecny in ur code since js is threaded
 dont call useState in if-else and for loop
 eg:- this one=>  const [btnNameReact, setBtnReact] = useState("Login");
+PS C:\Users\vinay\Desktop\NR\nr4> npm i react-router-dom
+createBrowserRouter is the recommended
+can create a component by rafce
+if we dont have any component route then it will give error 404:http://localhost:1234/vijay
+lets create one by erorElment
+whenever a function starting fom word "use" its a hook
+useRouteError gives you more info about this error.so we can show specific details
+childeren route=>
+<Header />
+      {/* if path =/ */}
+      <Body />
+      {/* if path =/about */}
+      <About/>
+      {/* if path =/about */}
+      <Contact/>
+      outlet will help
+now we have to link it we could use anchor tag < a href="">
+we should not use it because it reloads the coming page again and again
+2 types of routing = client side=>this we are doing
+, 
+server side rouying=>goes to the server collects the data and reloads the page
+spa=>it is one page just the components are getting interchange via client side routing
+this is simple routing => we created links 
+dynamic routing =>dynamic route for evry restraunt we have=>have to build diff links for diff routing
+1st we create a restraunt menu page 
+    path:"/restraunts/:resId"
+: makes it dynamic
