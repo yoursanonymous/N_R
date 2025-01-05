@@ -301,3 +301,16 @@ dynamic routing =>dynamic route for evry restraunt we have=>have to build diff l
 1st we create a restraunt menu page 
     path:"/restraunts/:resId"
 : makes it dynamic
+we can do this by
+    const {name,cuisines,costForTwoMessage}=resInfo?.cards[2]?.card?.card?.info||{};
+    
+    return resInfo===null?
+    <Shimmer/>:
+    (
+        <div className="menu">
+            <h1>{name}</h1>
+            <h2>{cuisines.join(", ")}</h2>
+            <h3>{costForTwoMessage}</h3>
+
+
+grpahQl=helps you with overfetching or fetch only the data that you want to load

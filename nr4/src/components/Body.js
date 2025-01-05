@@ -1,6 +1,5 @@
 import RestrauntCard from "./RestrauntCard";
 import React, { useCallback } from "react";
-import ReactDOM from "react-dom/client";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmar";
 const Body = () => {
