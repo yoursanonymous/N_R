@@ -2,7 +2,9 @@ import RestrauntCard from "./RestrauntCard";
 import React, { useCallback } from "react";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmar";
+import { Link } from "react-router-dom";
 const Body = () => {
+
   //create a local state variable
   const [listOfRestraunt, setListOfRestraunt] = useState([]); //this is array destructuring
   const [filteredRestraunt, setFilteredRestraunt] = useState([]);
@@ -71,7 +73,8 @@ const Body = () => {
       </div>
       <div className="res-conatiner">
         {filteredRestraunt.map((restraunt) => (
-          <RestrauntCard key={restraunt.info.id} resData={restraunt} />
+          <Link key={restraunt.info.id} to={"/restraunts/"+restraunt.info.id}><RestrauntCard resData={restraunt} />
+            </Link>
         ))}
       </div>
     </div>

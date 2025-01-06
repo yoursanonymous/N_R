@@ -314,3 +314,21 @@ we can do this by
 
 
 grpahQl=helps you with overfetching or fetch only the data that you want to load
+sometime code can be unreachable beccasue of return
+(
+
+)
+please connect these 2 because it sis not c/c++
+now we can map nd give the every menu dish price in a list
+now we have to load every restarunt in our web page for this we can use the useParams hook
+if we const params=useParams()
+    console.log(params);
+  we get a resId object which shows us the a no. in a string form
+we can use =>const {resId}=useParams()
+then we get a default resId in the web page we have to put a certain workable resId by ourselves in the link of our page
+we wil get a default url =>http://localhost:1234/restraunts/123
+we have to change the last string of no.,to that of workable resId
+http://localhost:1234/restraunts/557552
+now we have to make the card clickable by link comoponent that we will su eto connect the menu Page
+if there comes an error of link is not defined impoert it from react-router-dom
+link is a special component that is given us by react but behind the scene it is using anchor tag as we can see in the console of the inspect it is a wrapper over anchor tag
