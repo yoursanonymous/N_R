@@ -31,7 +31,7 @@ const RestrauntMenu=()=>{
             <h3>{costForTwoMessage}</h3>
 
             <ul>
-                {itemCards.map((item)=>(
+                {itemCards?.map((item)=>(
                     <li key={item.card.info.id}>{item.card.info.name}-{"Rs"}{item.card.info.price/100}.00</li>
                     // <li>{item.card.info.offerTags[0].subTitle}-{item.card.info.offerTags[0].title}</li>
                     ))}

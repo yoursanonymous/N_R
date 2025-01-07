@@ -332,3 +332,36 @@ http://localhost:1234/restraunts/557552
 now we have to make the card clickable by link comoponent that we will su eto connect the menu Page
 if there comes an error of link is not defined impoert it from react-router-dom
 link is a special component that is given us by react but behind the scene it is using anchor tag as we can see in the console of the inspect it is a wrapper over anchor tag
+class based components are old but are used in many old projects 
+we will develop a feature so that we give team member through github api
+now we have weitten the functional based component in user.js now we will convert it into class based component in userclass
+class UserClass extends React.Component{}
+by writing this we can tell react that it is a class based component
+class based component has a render method which return a piece of js 
+both wil return the same js code
+now we see how to send props
+            <User name={"vinayak "}/>
+
+const User=(props)=>{
+    return(
+        <div className="user-card">
+            <h2>Name: {props.name}</h2>
+but we an  can also do by destructuring the props
+
+const User=({name})=>{
+    return(
+        <div className="user-card">
+            <h2>Name: {name}</h2>
+
+to use props in clas based component
+            <UserClass name={"vinayak (classes)"}/>
+
+import React from "react"
+class UserClass extends React.Component{
+    constructor(props){
+        super(props);
+    }
+we always have to use super(props)
+we have to create state variable, local variabble in class
+in useState(0) the 0 represent ht einitial value
+earlier when there was no hooks we create state whenever a class instant is created=>loading the clas based component onto the webpage that means we were creating  instance of a class 
