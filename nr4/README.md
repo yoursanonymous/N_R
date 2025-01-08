@@ -365,3 +365,62 @@ we always have to use super(props)
 we have to create state variable, local variabble in class
 in useState(0) the 0 represent ht einitial value
 earlier when there was no hooks we create state whenever a class instant is created=>loading the clas based component onto the webpage that means we were creating  instance of a class 
+
+
+
+if we want to change the vlaue of state variable 
+<button
+                onClick={()=>{
+                    this.state.count=this.state.count+1;
+                }}>
+                    count increase
+                </button>
+                but this would not work
+we would never update state variable directly
+infact you have to use useState({})
+ onClick={()=>{
+                    this.setState({
+                        count:this.state.count+1,
+                    })
+whenever it will update the count react wil re render
+if you want to update the 2 nd value also you dont have to create another this.state({
+  count2:this.state.count2+1
+})
+ instead u can batch it both
+ <button
+                onClick={()=>{
+                    this.setState({
+                        count:this.state.count+1,
+                        count2:this.state.count2+1
+                    })
+                }}>
+this is object=> count2:this.state.count2+1
+life cycle=>if we load about js it first all the h1 then userClass in that it will 1st call constructor then 2nd render 
+componentDidMount is called after the render component which means that we mounted it to the web page
+if we 
+componentDidMount(){
+        console.log("child component mount")
+    } in the userClass.js 
+and componentDidMount(){
+        console.log("parent component mount")
+    }in the about.js
+    1 st child component mount will come then parent component mount 
+its use case it to make an api call because we want to load then make an api call then fill the data
+when we 
+        console.log(this.props.name+"child component mount")
+        console.log(this.props.name+"child constructor")
+        console.log(this.props.name+"child render")
+we get the result in this order=>
+vinayak (classes)child constructor
+ vinayak (classes)child render
+UserClass.js:9 alki musk (classes)child constructor
+UserClass.js:17 alki musk (classes)child render
+vinayak (classes)child component mount
+ alki musk (classes)child component mount
+ parent component mount
+
+this is because react lifecycle
+beacus there are 2 children it will optimise it and bath the render phase of these 2 child and then commit phase will be badged together
+1st child it will do it till render then cal 2nd child render
+
+we now make an api call in the class based component
