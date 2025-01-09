@@ -1,6 +1,6 @@
 namaste react=>in this i am writing the react in the js language
 this code is not ready to for production you need to 
-npm =doesnt have a full form it manaes packages but doesnt stand for node package manager
+npm =doesnt have a full form it means packages but doesnt stand for node package manager
 it is standard repo for all the packages ,any packages you need you will have to download it from the npm
 package.json is a config for npm
 after this we can add dependencies into our projects
@@ -424,3 +424,35 @@ beacus there are 2 children it will optimise it and bath the render phase of the
 1st child it will do it till render then cal 2nd child render
 
 we now make an api call in the class based component
+ async componentDidMount(){
+        // console.log(this.props.name+"child component mount")
+        const data=await fetch("https://api.github.com/users/yoursanonymous");
+        const json=await data.json();
+        console.log(json)
+    }
+and now to update we will get state variables
+this.state={
+            userInfo:{
+                name:"bunny",
+                location:"shimla"
+            }
+        }
+
+// in this the 1st time the cosntrctor  is called then the render which render the dumny data which was given in the constructor
+// then the componenetDidMount was called which fetches the api data after that we call the <this.setState>then render its data again by calling the render function
+// there is another thing called componentDidUpdate that is caleld afetr all teh above things have happened
+// another one componentWillUnmount will be called when the component will be unmounted that will be when we change the page
+
+ single responsibility principle
+ we will write our own custom hook
+ we dont need a custom hook but this make it look readable,modular,reusable
+ we can also design a online status component 
+ and check it through below network tab option that says no throttling in defaultly
+ you dont have to use the word "use" but it is recomended in the hook
+ chunking/code-splitting/dynamic bundling/lazy loading/on demand loading= to break down your app intosmaller logical chunk
+ lazy loading=whenever we go to our grocery page,grocery code will be there in our app
+ now we need to this 
+ lazy takes a callback function 
+ now we will not use import function
+ grocery has another seperated bundle 
+ it will cause an error bcz in the time when th grocery is not loaded we use susupense to solve this

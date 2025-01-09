@@ -3,6 +3,7 @@ import React, { useCallback } from "react";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmar";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
 
   //create a local state variable
@@ -28,6 +29,10 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+  const OnlineStatus=useOnlineStatus();
+  if(OnlineStatus===false){
+    return(<h1> you are offline</h1>)
+  }
 
   // const fetchD=async()=>{
   //   const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/update");
