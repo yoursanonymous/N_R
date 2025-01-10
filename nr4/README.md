@@ -456,3 +456,18 @@ this.state={
  now we will not use import function
  grocery has another seperated bundle 
  it will cause an error bcz in the time when th grocery is not loaded we use susupense to solve this
+
+we will learn how to use tailwind
+postcss is a tool for transforming the css in js
+tailwind css uses postcss
+now we have to tell postcss that we are using tailwind here
+if you want to use tailwind your parcel needs postcssrc to read tailwind
+we use classname for tailwind
+margin bottom=mb-5,top margin=mt,
+padding in right and left= px, padding left=pl
+if you want give 200px width, you can use"[]" if you dont find class of hardcoded code w-[200px]
+whenever you ad dsme class then o ly it adds it to the css class . it doesnt bloats up your bundle
+ bg-yellow-300 sm:bg-orange-400 lg:bg-green-400it makes the colour dependent on the size if large- green small-orange, middle-yellow
+
+ higher order cmponent is a function  that takes a componrnt and returns the enhanced version of that  component acts like an enhancer
+ we will create the "promoted" feature

@@ -5,14 +5,14 @@ const RestrauntCard = (props) => {
     const{cloudinaryImageId,name,cuisines,avgRating,deliveryTime}=resData?.info;
     return (
       <div
-        className="res-card"
+        className="m-1 p-4 w-52 rounded-lg hover:w-60 ease-in-out time"
         style={{
           backgroundColor: "lightgray",
           border: "1px solid gray",
         }}
       >
         <img
-          className="meghana"
+          className="meghana "
           src={
             CDN_URL
             +
@@ -20,7 +20,7 @@ const RestrauntCard = (props) => {
           }
           alt={name}
         />
-        <h3>{name}</h3>
+        <h3 className="font-bold py-4 text-l">{name}</h3>
         <h4>{cuisines.join(", ")}</h4>
         <h4>
           {avgRating + " stars"} {deliveryTime} minutes
