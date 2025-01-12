@@ -1,9 +1,11 @@
-import RestrauntCard from "./RestrauntCard";
+import RestrauntCard,{withPromotedLabel} from "./RestrauntCard";
 import React, { useCallback } from "react";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmar";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { CDN_URL } from "../utils/constants";
+const RestrauntCardPromoted=withPromotedLabel(RestrauntCard);
 const Body = () => {
 
   //create a local state variable
@@ -43,12 +45,12 @@ const Body = () => {
   return listOfRestraunt.length === 0 ?(
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter flex">
-        <div className="p-4 m-4">
+    <div className="body dark:bg-slate-800">
+      <div className="filter flex ">
+        <div className="pl-2 m-4">
           <input
             type="text"
-            className="border border-solid:border black "
+            className="border-2 border-blue-300"
             value={searchText}
             onChange={(e) => {
               setSeachText(e.target.value);
@@ -64,7 +66,7 @@ const Body = () => {
             }}
           >search</button>
         </div>
-        <div className="p-4 m-4 items-center">
+        <div className="p-4 ">
           <button
           className="px-4 py-2 m-4 rounded-lg bg-gray-500"
           onClick={() => {
@@ -80,7 +82,9 @@ const Body = () => {
       </div>
       <div className="res-conatiner flex flex-wrap">
         {filteredRestraunt.map((restraunt) => (
-          <Link key={restraunt.info.id} to={"/restraunts/"+restraunt.info.id}><RestrauntCard resData={restraunt} />
+          <Link key={restraunt.info.id} to={"/restraunts/"+restraunt.info.id}>
+            {restraunt.info.isOpen?(<RestrauntCardPromoted resData={restraunt}/>):(<RestrauntCard resData={restraunt} />)
+            }
             </Link>
         ))}
       </div>

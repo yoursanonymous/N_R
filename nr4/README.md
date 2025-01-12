@@ -471,3 +471,4 @@ whenever you ad dsme class then o ly it adds it to the css class . it doesnt blo
 
  higher order cmponent is a function  that takes a componrnt and returns the enhanced version of that  component acts like an enhancer
  we will create the "promoted" feature
+ absolute makes it overlap

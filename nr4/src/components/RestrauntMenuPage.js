@@ -9,6 +9,7 @@ const RestrauntMenu=()=>{
     if(resInfo===null){
         return <Shimmer/>
     }
+
     // useEffect(()=>{
     //     fetchMenu();
     // },[]);
@@ -19,10 +20,10 @@ const RestrauntMenu=()=>{
     //     const json =await data.json()
     //     console.log(json.data)
     //     setResInfo(json.data)
-
     // };
-    const {name,cuisines,costForTwoMessage}=resInfo?.cards[2]?.card?.card?.info||{};
 
+    const {name,cuisines,costForTwoMessage}=resInfo?.cards[2]?.card?.card?.info||{};
+    
     const {itemCards}=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card||{};
  
     return(
