@@ -3,6 +3,7 @@ import Shimmer from "./shimmar";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Menu } from "../utils/constants";
+import RestrauntCategories from "./RestrauntCategories";
 const RestrauntMenu=()=>{
     const {resId}=useParams()
     const resInfo=useRestrauntMenu(resId);
@@ -25,19 +26,27 @@ const RestrauntMenu=()=>{
     const {name,cuisines,costForTwoMessage}=resInfo?.cards[2]?.card?.card?.info||{};
     
     const {itemCards}=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card||{};
- 
+
+    console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+    
+    const category=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+        (c)=>c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+    console.log(category);
     return(
-        <div className="menu">
-            <h1>{name}</h1>
+        <div className="text-center">
+            <h1 className="font-bold text-2xl my-10">{name}</h1>
             <h2>{cuisines.join(", ")}</h2>
             <h3>{costForTwoMessage}</h3>
 
-            <ul>
+            {/* <ul>
                 {itemCards?.map((item)=>(
                     <li key={item.card.info.id}>{item.card.info.name}-{"Rs"}{item.card.info.price/100}.00</li>
-                    // <li>{item.card.info.offerTags[0].subTitle}-{item.card.info.offerTags[0].title}</li>
+                    // <li>{item.card.info.offerTags[0].subTitlek}-{item.card.info.offerTags[0].title}</li>
                     ))}
-            </ul>
+            </ul> */}
+           {category.map(
+            (category)=>(<RestrauntCategories data={category?.card?.card}/>))}
         </div>
     ) 
 }

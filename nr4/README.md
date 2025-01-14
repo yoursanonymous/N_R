@@ -472,3 +472,9 @@ whenever you ad dsme class then o ly it adds it to the css class . it doesnt blo
  higher order cmponent is a function  that takes a componrnt and returns the enhanced version of that  component acts like an enhancer
  we will create the "promoted" feature
  absolute makes it overlap
+
+ all  react application has 2 layer ui, data
+ ui layer is powered by data layer
+ lets build all the dishes in the menu of restraut
+ sometimes u can find "@" keyword in the that wont work unless ["@type"]
+ accordion ui=>can collapse and see data
