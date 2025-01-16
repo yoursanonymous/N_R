@@ -478,3 +478,9 @@ whenever you ad dsme class then o ly it adds it to the css class . it doesnt blo
  lets build all the dishes in the menu of restraut
  sometimes u can find "@" keyword in the that wont work unless ["@type"]
  accordion ui=>can collapse and see data
+
+
+ 1st we wil craete onClick={handleClick}
+ in this the handle click is a fucntion
+ controlled component =>a component that has is data controlled by parent component like if we add showItems to the resMeenuPage instead of the resCategories page it's function setShowItems will be contolled by resMenuPage
+ at a time only  accordion should be open
