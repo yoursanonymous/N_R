@@ -479,8 +479,17 @@ whenever you ad dsme class then o ly it adds it to the css class . it doesnt blo
  sometimes u can find "@" keyword in the that wont work unless ["@type"]
  accordion ui=>can collapse and see data
 
+react developer tool contains components and profiler
+profiler basiclaly records your react actions =>colourfull components are the components taht rae getting affected
 
+components contain it shows the state oflist of components 
+
+ new feature=>at a time only  accordion should be open
  1st we wil craete onClick={handleClick}
  in this the handle click is a fucntion
  controlled component =>a component that has is data controlled by parent component like if we add showItems to the resMeenuPage instead of the resCategories page it's function setShowItems will be contolled by resMenuPage
- at a time only  accordion should be open
+if you want to keep the 1st one open showItems={index===0&&true} itsis equal to setShowItems={index===0?true:false}
+lifting state up =>imp concept
+
+props drilling=>if you want to give the props to the child component you have to pass it htriugh the parents component as props 
+react context is used to avoid props drilling 

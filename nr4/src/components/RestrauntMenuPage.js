@@ -2,15 +2,15 @@ import useRestrauntMenu from "../utils/useRestrauntMenu";
 import Shimmer from "./shimmar";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Menu } from "../utils/constants";
+// import { Menu } from "../utils/constants";
 import RestrauntCategories from "./RestrauntCategories";
 const RestrauntMenu=()=>{
     const {resId}=useParams()
+    
+    const [showIndex,setShowIndex]=useState(null)
     const resInfo=useRestrauntMenu(resId);
-    if(resInfo===null){
-        return <Shimmer/>
-    }
-    const [showIndex,setShowIndex]=useState()
+    if(resInfo===null) return <Shimmer/>
+    
 
     // useEffect(()=>{
     //     fetchMenu();
@@ -46,12 +46,13 @@ const RestrauntMenu=()=>{
                     // <li>{item.card.info.offerTags[0].subTitlek}-{item.card.info.offerTags[0].title}</li>
                     ))}
             </ul> */}
-           {category.map(
-            (category)=>(<RestrauntCategories 
+            {/* this is a controlled component */}
+           {category.map((category,index)=>(
+            <RestrauntCategories 
             className="m-4 p-4"
             data={category?.card?.card}
-            showItems={(index===showIndex? true:false)}
-            setShowIndex={(()=>setShowIndex)}
+            showItems={index===showIndex? true:false}
+            setShowIndex={()=>setShowIndex(index)}
             />))}
         </div>
     ) 

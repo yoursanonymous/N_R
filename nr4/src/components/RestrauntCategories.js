@@ -1,10 +1,10 @@
 import ItemList from "./ItemList";
 import { useState } from "react";
-const RestrauntCategories=({data})=>{
-    const [showItems,setShowItems]=useState(false)
+const RestrauntCategories=({data,showItems,setShowIndex})=>{
     console.log(data);
+    
     const handleClick=()=> {
-        setShowItems(!showItems)
+        setShowIndex()
     }
     return(
         <div>
@@ -15,7 +15,10 @@ const RestrauntCategories=({data})=>{
             <span className="font-bold text-lg">{data.title}-({data.itemCards.length})</span>
             <span >⬇</span>
             </div>
-            {showItems && <ItemList key={data.title} items={data.itemCards}/>}
+            {showItems &&
+            <ItemList key={data.title} 
+            items={data.itemCards}
+            />}
         </div>
         </div>
     )
