@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
+import userContext from "../utils/userContext";
 
 const RestrauntCard = (props) => {
     const { resData } = props;
+    const {loggedInUser}=useContext(userContext)
     const{cloudinaryImageId,name,cuisines=[],avgRating,deliveryTime,isOpen=false}=resData?.info||{};
     return (
       <div
@@ -25,6 +28,7 @@ const RestrauntCard = (props) => {
         <h4>
           {avgRating + " stars"} {deliveryTime} minutes
         </h4>
+        <h4>madeBy:{loggedInUser}</h4>
       </div>
     );
     //higher order component

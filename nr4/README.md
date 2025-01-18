@@ -493,3 +493,8 @@ lifting state up =>imp concept
 
 props drilling=>if you want to give the props to the child component you have to pass it htriugh the parents component as props 
 react context is used to avoid props drilling 
+
+//this is  used only when you have put things in many things
+// you dont have to put everything here
+we can not use useContext in class based component directly but indirectly by <userContext.consumer>{(data)=>console.log(data)}<userContext.consumer>
+you can create context anywhere and override it

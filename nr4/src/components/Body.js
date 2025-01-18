@@ -1,22 +1,23 @@
 import RestrauntCard,{withPromotedLabel} from "./RestrauntCard";
-import React, { useCallback } from "react";
+import React, { useCallback, useContext } from "react";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmar";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { CDN_URL } from "../utils/constants";
+import userContext from "../utils/userContext";
 const RestrauntCardPromoted=withPromotedLabel(RestrauntCard);
 const Body = () => {
-
   //create a local state variable
   const [listOfRestraunt, setListOfRestraunt] = useState([]); //this is array destructuring
   const [filteredRestraunt, setFilteredRestraunt] = useState([]);
-
   const [searchText, setSeachText] = useState("");
   useEffect(() => {
     fetchData();
   }, []);
   // this callback console.log fucntion wil be caled after rendering the body
+
+  const {loggedInUser,setUserName,userName}=useContext(userContext);
 
   const fetchData = async () => {
     const data = await fetch(
@@ -66,7 +67,7 @@ const Body = () => {
             }}
           >search</button>
         </div>
-        <div className="p-4 ">
+        <div className="p-4  flex">
           <button
           className="px-4 py-2 m-4 rounded-lg bg-gray-500"
           onClick={() => {
@@ -78,6 +79,14 @@ const Body = () => {
         >
           Top rated restraunt
         </button>
+        <div className="">
+          <label className="text-green-400">username</label>
+          <input 
+          value={loggedInUser}
+          className="border-2 border-blue-600 m-4 px-1"
+          onChange={(e)=>{setUserName(e.target.value)}}
+          ></input>
+        </div>
         </div>
       </div>
       <div className="res-conatiner flex flex-wrap">
