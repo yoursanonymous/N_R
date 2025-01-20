@@ -1,23 +1,23 @@
 import RestrauntCard,{withPromotedLabel} from "./RestrauntCard";
-import React, { useCallback, useContext } from "react";
+import React, {  useContext } from "react";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmar";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import { CDN_URL } from "../utils/constants";
 import userContext from "../utils/userContext";
 const RestrauntCardPromoted=withPromotedLabel(RestrauntCard);
+
 const Body = () => {
   //create a local state variable
   const [listOfRestraunt, setListOfRestraunt] = useState([]); //this is array destructuring
+
   const [filteredRestraunt, setFilteredRestraunt] = useState([]);
+
   const [searchText, setSeachText] = useState("");
   useEffect(() => {
     fetchData();
   }, []);
   // this callback console.log fucntion wil be caled after rendering the body
-
-  const {loggedInUser,setUserName,userName}=useContext(userContext);
 
   const fetchData = async () => {
     const data = await fetch(
@@ -32,7 +32,11 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  const {loggedInUser,setUserName,userName}=useContext(userContext);
+
   const OnlineStatus=useOnlineStatus();
+  
   if(OnlineStatus===false){
     return(<h1> you are offline</h1>)
   }

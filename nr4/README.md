@@ -498,3 +498,33 @@ react context is used to avoid props drilling
 // you dont have to put everything here
 we can not use useContext in class based component directly but indirectly by <userContext.consumer>{(data)=>console.log(data)}<userContext.consumer>
 you can create context anywhere and override it
+redux=>used in big scale application 
+redux and react are different
+offers state management
+gives 2 lib=>react-redux,redux-toolkit
+redux toolkit simplifies the redux
+lets build cart feature
+redux store is an object kept at the global central place
+1st if we have to click the add then it hsould be deptches an action which  call a fucntion called reducer which updates the slice of our redux store, the card component is subscribed to our store using ddddddddddselector
+when we wwant to read data from this cart, we use somethiong as selector which reads the data and modify our react component in cart button=> this phenomenon is known as subscribing to the store
+
+steps=>
+1# install redux toolkit=>npm install @reduxjs/toolkit and react-redux
+2# build our store
+3# connect 
+4# cretae slice 
+5# dispatch action
+6# selector
+cartSlice is a big obhect whic has actions and reducer we are exporting it individaully
+the app store reducer is our app rrducer which contain small reducer for each slice
+after appStore and cartSlice we would read data by selector which is a hook inside react
+useSelector
+
+instead of this
+onClick={handleADDItem()}
+this means that you have caled this function already
+use
+
+onClick={handleADDItem()}	->Executes on render==>	Avoid unless intentional immediate execution is required.
+onClick={() => handleADDItem()}->	Executes on click	==>Use when you need to pass arguments or inline logic.
+onClick={handleADDItem}	->Executes on click	=>Use when passing a function reference directly is sufficient.

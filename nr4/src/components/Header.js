@@ -3,10 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import userContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [btnNameReact, setBtnReact] = useState("Login");
   const { loggedInUser } = useContext(userContext);
   const OnlineStatus = useOnlineStatus();
+  const cartItems = useSelector((store) => store.cart.items);
   return (
     <div className="flex justify-between shadow-lg bg-yellow-300 sm:bg-orange-400 lg:bg-green-400 dark:bg-slate-900">
       <div className="logo_container">
@@ -37,9 +39,11 @@ const Header = () => {
           <li className="px-4 py-2 m-4 rounded-lg bg-gray-500 border-2 border-emerald-950 hover:w-24 ease-in-out">
             learn more
           </li>
-          <li className="px-4 py-2 m-4 rounded-lg bg-gray-500 border-2 border-emerald-950 hover:w-24 ease-in-out">
-            cart
-          </li>
+          <Link to="/cart">
+            <li className="px-4 py-2 m-4 rounded-lg bg-gray-500 border-2 border-emerald-950 hover:w-24 ease-in-out">
+              cart-({cartItems.length} items)
+            </li>
+          </Link>
           <button
             className="px-4 py-2 m-4 rounded-lg bg-gray-500 border-2 border-emerald-950 hover:w-24 ease-in-out"
             onClick={() => {

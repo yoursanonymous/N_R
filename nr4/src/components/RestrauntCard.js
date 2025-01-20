@@ -5,7 +5,8 @@ import userContext from "../utils/userContext";
 const RestrauntCard = (props) => {
     const { resData } = props;
     const {loggedInUser}=useContext(userContext)
-    const{cloudinaryImageId,name,cuisines=[],avgRating,deliveryTime,isOpen=false}=resData?.info||{};
+    const{cloudinaryImageId,name,cuisines=[],avgRating,isOpen=false}=resData?.info||{};
+    const {slaString}=resData?.info?.sla||{};
     return (
       <div
         className="m-1 p-4 w-52 rounded-lg hover:w-60 ease-in-out duration-100"
@@ -26,8 +27,9 @@ const RestrauntCard = (props) => {
         <h3 className="font-bold py-4 text-l">{name}</h3>
         <h4>{cuisines.join(", ")}</h4>
         <h4>
-          {avgRating + " stars"} {deliveryTime} minutes
+          {avgRating + " stars"} 
         </h4>
+        <h4> {slaString +" minutes"} </h4>
         <h4>madeBy:{loggedInUser}</h4>
       </div>
     );
