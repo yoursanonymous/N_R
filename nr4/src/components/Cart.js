@@ -8,7 +8,7 @@ const Cart = () => {
   console.log(cartItems);
   const dispatch=useDispatch()
   const handleCart=()=>{
-    dispatch(clearCart)
+    dispatch(clearCart())
   }
   return (
     <div className="text-center m-4 p-4">
@@ -18,8 +18,9 @@ const Cart = () => {
       className="p-2 m-3 text-white bg-black"
       onClick={handleCart}
       >
-        clear cart
+        clear existing cart
       </button>
+      {cartItems.length===0 && <h1>add items to cart</h1>}
         <ItemList items={cartItems}></ItemList>
       </div>
     </div>

@@ -528,3 +528,28 @@ use
 onClick={handleADDItem()}	->Executes on render==>	Avoid unless intentional immediate execution is required.
 onClick={() => handleADDItem()}->	Executes on click	==>Use when you need to pass arguments or inline logic.
 onClick={handleADDItem}	->Executes on click	=>Use when passing a function reference directly is sufficient.
+
+
+there are  types of testing
+1)manual testing=opening up different pages,
+2)writing the test cases that will test our code
+- unit testing- testing 1 unit of component
+- intergration testing =>testing the integration or the flow of component 
+- end 2 end testing= testing throughout the track of the website form user entering the website then to leaving
+we are going to use react testing library which acts like a wrapper around dom testing library
+it uses jest
+settig up testing in app
+- installing react taesting lib
+- installing jest
+- installed babel dependencies
+- ocnfigure babel
+- config parel file to disable its default babel tarnspilation
+- jest configuration=>npx jest --init
+- install jsdom library=if you are using jest 28 or up you have to install jest enviourment jsdom
+
+now we used parcel in our app already which uses babel and we hve already isngalled the babel again, htis will craete a conflict b/w the 2 babels. so we have to make cahnges in our parcel
+parcle uses babel isnide, but if you want to use sjest which askready uses bable you can make changes that stops the babel in parcel  by making .parcelrc
+if you wan tto test cases you have a commnad for it called test laraedy existing package.json
+so if we want to test =>we can write npm run test=>that will run our test cases
+when you wrte test cases they will not run on browser, they need a run time, in thtav case we use jsDom, it is llike a browser but its not a browseer
+
