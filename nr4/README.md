@@ -546,10 +546,20 @@ settig up testing in app
 - config parel file to disable its default babel tarnspilation
 - jest configuration=>npx jest --init
 - install jsdom library=if you are using jest 28 or up you have to install jest enviourment jsdom
+- npm install -D @babel/preset-react to make jsx work in test cases
+- now we  have to include @babel/preset-react inside my babel config =>      ["@babel/preset-react",{runtime:"automatic"}] in babel.config.js this babel prest react to html so it can raed carefully
+- npm i -D install @testing-Library/jest-dom
 
 now we used parcel in our app already which uses babel and we hve already isngalled the babel again, htis will craete a conflict b/w the 2 babels. so we have to make cahnges in our parcel
 parcle uses babel isnide, but if you want to use sjest which askready uses bable you can make changes that stops the babel in parcel  by making .parcelrc
 if you wan tto test cases you have a commnad for it called test laraedy existing package.json
 so if we want to test =>we can write npm run test=>that will run our test cases
 when you wrte test cases they will not run on browser, they need a run time, in thtav case we use jsDom, it is llike a browser but its not a browseer
+you can get many things by screeen.get<anything>
+we can group test cases = describe method we can use
+if there are manu
 
+  // could not find react-redux context value; please ensure the component is wrapped in a <Provider>
+  //this error is from useSelector hat comes from redux, it doesnt know redux we have to provide redux store to our header
+  //we still have error from link,which comes from react-router-dom
+  now we will write integration testing

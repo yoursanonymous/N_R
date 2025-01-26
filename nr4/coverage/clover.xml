@@ -1,11 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1737529744690" clover="3.2.0">
-  <project timestamp="1737529744691" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
-    <file name="sum.js" path="C:\Users\vinay\Desktop\NR\nr4\src\components\sum.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-    </file>
+<coverage generated="1737875111324" clover="3.2.0">
+  <project timestamp="1737875111324" name="All files">
+    <metrics statements="48" coveredstatements="33" conditionals="16" coveredconditionals="4" methods="19" coveredmethods="8" elements="83" coveredelements="45" complexity="0" loc="48" ncloc="48" packages="2" files="10" classes="10"/>
+    <package name="components">
+      <metrics statements="30" coveredstatements="20" conditionals="16" coveredconditionals="4" methods="12" coveredmethods="6"/>
+      <file name="Header.js" path="C:\Users\vinay\Desktop\NR\nr4\src\components\Header.js">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="52" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="ItemList.js" path="C:\Users\vinay\Desktop\NR\nr4\src\components\ItemList.js">
+        <metrics statements="9" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+      <file name="RestrauntCard.js" path="C:\Users\vinay\Desktop\NR\nr4\src\components\RestrauntCard.js">
+        <metrics statements="10" coveredstatements="8" conditionals="6" coveredconditionals="2" methods="3" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="3"/>
+        <line num="10" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+      </file>
+      <file name="contact.js" path="C:\Users\vinay\Desktop\NR\nr4\src\components\contact.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+      </file>
+      <file name="sum.js" path="C:\Users\vinay\Desktop\NR\nr4\src\components\sum.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="18" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
+      <file name="appStore.js" path="C:\Users\vinay\Desktop\NR\nr4\src\utils\appStore.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="cartSlice.js" path="C:\Users\vinay\Desktop\NR\nr4\src\utils\cartSlice.js">
+        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+      <file name="constants.js" path="C:\Users\vinay\Desktop\NR\nr4\src\utils\constants.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+      <file name="useOnlineStatus.js" path="C:\Users\vinay\Desktop\NR\nr4\src\utils\useOnlineStatus.js">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+      </file>
+      <file name="userContext.js" path="C:\Users\vinay\Desktop\NR\nr4\src\utils\userContext.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

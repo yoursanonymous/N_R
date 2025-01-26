@@ -1,4 +1,3 @@
-import { execPath } from "process";
 import sum from "../sum";
 
 test("sum function should calculate sum ",()=>{

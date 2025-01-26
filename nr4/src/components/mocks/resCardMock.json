@@ -1,0 +1,85 @@
+{
+    "info": {
+        "id": "677833",
+        "name": "Chinese Wok",
+        "cloudinaryImageId": "e0839ff574213e6f35b3899ebf1fc597",
+        "locality": "Rajender Nagar",
+        "areaName": "Sahibabad",
+        "costForTwo": "₹250 for two",
+        "cuisines": [
+            "Chinese",
+            "Asian",
+            "Tibetan",
+            "Desserts"
+        ],
+        "avgRating": 4.1,
+        "parentId": "61955",
+        "avgRatingString": "4.1",
+        "totalRatingsString": "695",
+        "sla": {
+            "deliveryTime": 36,
+            "lastMileTravel": 3.8,
+            "serviceability": "SERVICEABLE",
+            "slaString": "35-40 mins",
+            "lastMileTravelString": "3.8 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2025-01-26 01:00:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "Green%20Dot%20Awards/Best%20In%20Veg%20Noodles.png",
+                    "description": "Delivery!"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "Delivery!",
+                                "imageId": "Green%20Dot%20Awards/Best%20In%20Veg%20Noodles.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "ITEMS",
+            "subHeader": "AT ₹149"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {},
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {
+        "context": "seo-data-ab8d67fd-c20b-4e0b-90b6-4576a7a1e399"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/city/noida/chinese-wok-rajender-nagar-sahibabad-rest677833",
+        "type": "WEBLINK"
+    }
+}
