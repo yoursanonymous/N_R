@@ -31,13 +31,12 @@ it("Should change the login button to logout on click", () => {
 
   const loginButton = screen.getByRole("button", { name: "Login" });
 
-  fireEvent.click(loginButton)
+  fireEvent.click(loginButton);
   //const loginButton = screen.getByText("Login");
-  const logoutButton=screen.getByRole("button",{name:"Logout"})
+  const logoutButton = screen.getByRole("button", { name: "Logout" });
 
   expect(logoutButton).toBeInTheDocument();
 });
-
 
 it("Should render Header Component with a Cart item ", () => {
   render(
@@ -52,6 +51,5 @@ it("Should render Header Component with a Cart item ", () => {
 
   expect(cartItems).toBeInTheDocument();
 });
-//to check cart item we use regex 
+//to check cart item we use regex
 //how to chec if the login changes to logout by fireEvent which shows which event to fire
-

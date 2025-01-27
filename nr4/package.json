@@ -4,7 +4,8 @@
   "description": "this is react codes",
   "scripts": {
     "start": "parcel NR1.html",
-    "test": "jest"
+    "test": "jest",
+    "watch-test":"jest --watch"
   },
   "repository": {
     "type": "git",

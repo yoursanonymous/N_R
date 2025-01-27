@@ -563,3 +563,13 @@ if there are manu
   //this error is from useSelector hat comes from redux, it doesnt know redux we have to provide redux store to our header
   //we still have error from link,which comes from react-router-dom
   now we will write integration testing
+// if we only render body in the page then it will give fail because of the fetch function
+        //if we render the body component it is rendering on js dom which is browser like but not browser and doesnt have all the powers
+        //and fetch is given by browser  so we have ton write mock function for this
+"watch-test":"jest --watch" it will jut make the test case again and again until you make some chnages on it
+act function  returns a promise
+
+
+
+we can create a basic look for react by terminal
+npx create-react-app netflix-gpt
