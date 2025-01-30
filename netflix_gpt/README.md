@@ -78,3 +78,17 @@ If you want to update your existing project:
 npm update react-scripts
 Then restart:
 npm start
+# features
+- login/sign up page
+    - sign in/sign up form
+    - redirect to browse page
+- browse(after authentication)
+    - header
+    - main movie
+        - trailer in background
+        - title & description
+        - movie suggestion
+            - movie list*N
+- netflixGPT
+    - saerch bar
+    - movie suggestions
