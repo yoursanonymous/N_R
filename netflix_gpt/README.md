@@ -92,3 +92,6 @@ npm start
 - netflixGPT
     - saerch bar
     - movie suggestions
+
+we can use formik for forms
+lets validate our form

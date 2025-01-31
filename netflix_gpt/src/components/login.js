@@ -1,10 +1,20 @@
-import React from "react";
+import React, { use } from "react";
 import Header from "./Header";
-import { useState } from "react";
+import { useState,useRef } from "react";
+import { checkValidate } from "../utils/validate";
+
 const Login = () => {
     const [isSignInForm,setIsSignForm]=useState();
     const toggleSignForm=()=>{
         setIsSignForm(!isSignInForm);
+    }
+    const email=useRef(null);
+    const password= useRef(null);
+    const handleClick=()=>{
+      console.log(email.current.value)
+      console.log(password.current.value);
+      
+      const message=checkValidate(email.current.value,password.current.value)
     }
   return (
     <div className="bg-black">
@@ -16,7 +26,7 @@ const Login = () => {
         />
       </div>
       <div>
-        <form className="w-3/12 h-100 p-12 bg-black my-56 absolute mx-auto right-0 left-0 opacity-85">
+        <form className="w-3/12 h-100 p-12 bg-black my-56 absolute mx-auto right-0 left-0 opacity-85" onSubmit={(e)=>e.preventDefault}>
           <h1 className="text-white  font-bold text-4xl">{isSignInForm?"Sign In":"Sign Up"}</h1>
           {!isSignInForm && (
             <>
@@ -37,7 +47,7 @@ const Login = () => {
           {!isSignInForm && 
             <input  className="px-2 py-3 my-4 bg-black text-white border-white border-2 w-full" placeholder="confirm pasword"type="text"/>
           } 
-          <button className="text-white border my-4 p-4 bg-red-700 border-black rounded-md w-full">
+          <button  onClick={handleClick}className="text-white border my-4 p-4 bg-red-700 border-black rounded-md w-full">
           {isSignInForm?"Sign In":"Sign Up"}
           </button>
           <p className="text-white cursor-pointer" onClick={toggleSignForm}>{isSignInForm?"New to neflix? sign up":"already a user sign in"}</p>
