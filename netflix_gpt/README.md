@@ -95,12 +95,11 @@ npm start
 
 we can use formik for forms
 lets validate our form
-<<<<<<< HEAD
+
 we will use regex element as by searching in the internet its query and writing it in the validData.js and testing it as email and password and thsn using useRef. firstly setting it as null then 
 we can validate the email if it contains @ and can validate if it contains a capital alphabet and numbers
 useRef is used to reefrnce afield over here
 for authentication we use google firebase as backend
 features of  firebase=> hosting
 build folder=>
-=======
->>>>>>> parent of a0d5bd4 (form validation)
+
