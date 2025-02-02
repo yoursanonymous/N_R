@@ -1,11 +1,10 @@
-import React from "react";
+import React, { use } from "react";
 import Header from "./Header";
 import { useState,useRef } from "react";
-import { checkValidData } from "../utils/validata";
+import { checkValidate } from "../utils/validate";
 
 const Login = () => {
     const [isSignInForm,setIsSignForm]=useState();
-    const [errorMessage,setErrorMessage]=useState(null)
     const toggleSignForm=()=>{
         setIsSignForm(!isSignInForm);
     }
@@ -15,8 +14,7 @@ const Login = () => {
       console.log(email.current.value)
       console.log(password.current.value);
       
-      const message=checkValidData(email.current.value,password.current.value);
-      setErrorMessage(message);
+      const message=checkValidate(email.current.value,password.current.value)
     }
   return (
     <div className="bg-black">
@@ -28,7 +26,7 @@ const Login = () => {
         />
       </div>
       <div>
-        <form className="w-3/12 h-100 p-12 bg-black my-56 absolute mx-auto right-0 left-0 opacity-85" onSubmit={(e)=>e.preventDefault()}>
+        <form className="w-3/12 h-100 p-12 bg-black my-56 absolute mx-auto right-0 left-0 opacity-85" onSubmit={(e)=>e.preventDefault}>
           <h1 className="text-white  font-bold text-4xl">{isSignInForm?"Sign In":"Sign Up"}</h1>
           {!isSignInForm && (
             <>
@@ -37,13 +35,11 @@ const Login = () => {
             </>
           )} 
           <input
-            ref={email}
             className="px-2 py-3 my-4 bg-black text-white border-white border-2 w-full"
             type="text"
             placeholder="email address"
           />
           <input
-          ref={password}
             className="px-2 py-3 my-4 bg-black text-white border-white border-2 w-full"
             type="text"
             placeholder="password"
@@ -51,7 +47,6 @@ const Login = () => {
           {!isSignInForm && 
             <input  className="px-2 py-3 my-4 bg-black text-white border-white border-2 w-full" placeholder="confirm pasword"type="text"/>
           } 
-          <p className="text-red-500">{errorMessage}</p>
           <button  onClick={handleClick}className="text-white border my-4 p-4 bg-red-700 border-black rounded-md w-full">
           {isSignInForm?"Sign In":"Sign Up"}
           </button>
